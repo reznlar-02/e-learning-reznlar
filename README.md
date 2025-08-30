@@ -7,30 +7,34 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-<h1>Laravel 11 | E-Learning</h1>
+<h1>Laravel 11 | E-Learning System</h1>
 
-## Screenshoot
+## Screenshot
 <p>Frontend</p>
 
-![image](https://github.com/ugunNet21/Laravel-e-learning-mazer/assets/45864165/509e9add-5aa5-4055-8f17-264f80c105a8)
+![Frontend Screenshot]
 
 
 <p>Dashboard Admin</p>
 
-![image](https://github.com/ugunNet21/Laravel-e-learning-mazer/assets/45864165/d3fe6d91-6348-4d37-98f7-98e46af9ee8f)
+![Admin Dashboard Screenshot]
 
 
-![image](https://github.com/ugunNet21/Laravel-e-learning-mazer/assets/45864165/44b3959d-93d0-49e0-b1f8-51219376497d)
+![Dashboard Screenshot]
 
 <p>Halaman Soal</p>
 
-![image](https://github.com/ugunNet21/Laravel-e-learning-mazer/assets/45864165/5380f2ad-6de8-4258-ad11-9f761deac83f)
+![Halaman Soal Screenshot]
 
 
 <p>Daftar Raport</p>
 
-![image](https://github.com/ugunNet21/Laravel-e-learning-mazer/assets/45864165/a36bd1e0-79c5-4bcb-be0c-21de373c2baf)
+![Daftar Raport Screenshot]
 
+
+## Repository
+
+Repository ini tersedia di: https://github.com/reznlar-02/e-learning-reznlar.git
 
 ## Skema Tabel dan Relasi
 
