@@ -34,7 +34,7 @@
 
 ## Repository
 
-Repository ini tersedia di: https://github.com/reznlar-02/e-learning-reznlar.git
+Repository ini tersedia di GitHub: [Reznlar Education E-Learning System](https://github.com/reznlar-02/e-learning-reznlar.git)
 
 ## Skema Tabel dan Relasi
 
@@ -174,7 +174,7 @@ Setiap Guru memiliki banyak Absensi Guru (one-to-many dengan Guru sebagai entita
 13. Absensi Siswa
 ```
 
-## Install ation & Configuration
+## Installation & Configuration
 
 ```bash
 composer install
