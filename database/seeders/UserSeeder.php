@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -12,7 +13,7 @@ class UserSeeder extends Seeder
     {
         // admin
         $userData = [
-            'name' => 'Admin',
+            'name' => 'Administrator',
             'username' => 'admin',
             'email' => 'info@belajar.com',
             'role' => 'admin',
@@ -52,26 +53,33 @@ class UserSeeder extends Seeder
 
         $user->assignRole('Super Admin');
 
+        // Kepala Sekolah
+        $userData = [
+            'name' => 'Kepala Sekolah',
+            'username' => 'kepsek',
+            'email' => 'kepsek@belajar.com',
+            'role' => 'Kepala Sekolah',
+            'password' => Hash::make('password'),
+        ];
+        $user = User::updateOrCreate(['email' => 'kepsek@belajar.com'], $userData);
+        if (!$user->hasRole('Kepala Sekolah')) {
+            $user->assignRole('Kepala Sekolah');
+        }
+
         // Murid
         $userData = [
             'name' => 'Murid',
-            'username' => 'Murid',
+            'username' => 'murid',
             'email' => 'murid@belajar.com',
             'role' => 'Murid',
             'status' => 'Aktif',
-            'password' => bcrypt('Bismillah'),
+            'password' => Hash::make('Bismillah'),
         ];
 
         $user = User::updateOrCreate(['email' => 'murid@belajar.com'], $userData);
-
-        if ($user->wasRecentlyCreated) {
-            $this->command->info('Data User ' . $user->name . ' has been saved.');
-        } else {
-            // Jika data sudah ada dan diperbaharui
-            $this->command->info('Data User ' . $user->name . ' has been updated.');
+        if (!$user->hasRole('Murid')) {
+            $user->assignRole('Murid');
         }
-
-        $user->assignRole('Murid');
 
         // Guru
         $userData = [
@@ -93,48 +101,6 @@ class UserSeeder extends Seeder
         }
 
         $user->assignRole('Guru');
-
-        // Kepala Sekolah
-        $userData = [
-            'name' => 'Kepala Sekolah',
-            'username' => 'kepsek',
-            'email' => 'kepsek@belajar.com',
-            'role' => 'Kepala Sekolah',
-            'status' => 'Aktif',
-            'password' => bcrypt('Bismillah'),
-        ];
-
-        $user = User::updateOrCreate(['email' => 'kepsek@belajar.com'], $userData);
-
-        if ($user->wasRecentlyCreated) {
-            $this->command->info('Data User ' . $user->name . ' has been saved.');
-        } else {
-            // Jika data sudah ada dan diperbaharui
-            $this->command->info('Data User ' . $user->name . ' has been updated.');
-        }
-
-        $user->assignRole('Kepala Sekolah');
-
-        // Staf
-        $userData = [
-            'name' => 'Staf',
-            'username' => 'staf',
-            'email' => 'staf@belajar.com',
-            'role' => 'Staf',
-            'status' => 'Aktif',
-            'password' => bcrypt('Bismillah'),
-        ];
-
-        $user = User::updateOrCreate(['email' => 'staf@belajar.com'], $userData);
-
-        if ($user->wasRecentlyCreated) {
-            $this->command->info('Data User ' . $user->name . ' has been saved.');
-        } else {
-            // Jika data sudah ada dan diperbaharui
-            $this->command->info('Data User ' . $user->name . ' has been updated.');
-        }
-
-        $user->assignRole('Staf');
 
         // Orang Tua
         $userData = [

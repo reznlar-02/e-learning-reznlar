@@ -2,9 +2,10 @@
     <div class="sidebar-wrapper active">
         <div class="sidebar-header position-relative">
             <div class="d-flex justify-content-between align-items-center">
-                <div class="logo">
-                    <a href="index.html"><img src="{{ asset('backend/assets/compiled/svg/logo.svg') }}" alt="Logo"
-                            srcset=""></a>
+                <div class="logo d-flex align-items-center">
+                    <a href="/home" class="d-flex align-items-center text-decoration-none">
+                        <span class="text-white fw-bold fs-5" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Reznlar</span>
+                    </a>
                 </div>
                 <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -155,7 +156,22 @@
 
 
                     </li>
-                @endauth
+                @endif
+
+                <!-- Logout Section -->
+                <li class="sidebar-title">Account</li>
+                
+                <li class="sidebar-item">
+                    <a href="{{ route('logout') }}" 
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                       class='sidebar-link text-danger'>
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span>Logout</span>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </li>
         </ul>
     </div>
 </div>

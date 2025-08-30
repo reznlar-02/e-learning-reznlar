@@ -12,7 +12,7 @@
 
                         <p class="section-subtitle">Better Learning Future With Us</p>
 
-                        <h2 class="h1 hero-title">Education Is About Academic Excellence</h2>
+                        <h2 class="h1 hero-title">Reznlar - Academic Excellence</h2>
 
                         <p class="hero-text">
                             Sed eu volutpat arcu, a tincidunt nulla quam, feugiat sit amet ipsum a, dapibus porta velit.

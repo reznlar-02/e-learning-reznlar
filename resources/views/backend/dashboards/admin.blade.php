@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Dashboard - E-Learning System')
+@section('title', 'Admin Dashboard - E-Learning System')
 @section('content')
     <div id="main">
         <header class="mb-3">
@@ -9,7 +9,8 @@
         </header>
 
         <div class="page-heading">
-            <h3>Dashboard - {{ $user->name }} ({{ $user->role }})</h3>
+            <h3>Admin Dashboard - {{ $user->name }}</h3>
+            <p class="text-muted">System Overview & Management</p>
         </div>
 
         <div class="page-content">
@@ -74,12 +75,12 @@
                                     <div class="row">
                                         <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                                             <div class="stats-icon red mb-2">
-                                                <i class="bi bi-book-fill"></i>
+                                                <i class="bi bi-layers-fill"></i>
                                             </div>
                                         </div>
                                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                            <h6 class="text-muted font-semibold">E-Learning</h6>
-                                            <h6 class="font-extrabold mb-0">{{ number_format($stats['total_e_learning']) }}</h6>
+                                            <h6 class="text-muted font-semibold">Total Jenjang</h6>
+                                            <h6 class="font-extrabold mb-0">{{ number_format($stats['total_jenjang']) }}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -95,100 +96,11 @@
                                     <div class="row">
                                         <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                                             <div class="stats-icon orange mb-2">
-                                                <i class="bi bi-question-circle-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                            <h6 class="text-muted font-semibold">Total Soal</h6>
-                                            <h6 class="font-extrabold mb-0">{{ number_format($stats['total_soal']) }}</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-lg-3 col-md-6">
-                            <div class="card">
-                                <div class="card-body px-4 py-4-5">
-                                    <div class="row">
-                                        <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
-                                            <div class="stats-icon indigo mb-2">
-                                                <i class="bi bi-check-circle-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                            <h6 class="text-muted font-semibold">Total Jawaban</h6>
-                                            <h6 class="font-extrabold mb-0">{{ number_format($stats['total_jawaban']) }}</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-lg-3 col-md-6">
-                            <div class="card">
-                                <div class="card-body px-4 py-4-5">
-                                    <div class="row">
-                                        <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
-                                            <div class="stats-icon teal mb-2">
-                                                <i class="bi bi-star-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                            <h6 class="text-muted font-semibold">Total Nilai</h6>
-                                            <h6 class="font-extrabold mb-0">{{ number_format($stats['total_nilai']) }}</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-lg-3 col-md-6">
-                            <div class="card">
-                                <div class="card-body px-4 py-4-5">
-                                    <div class="row">
-                                        <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
-                                            <div class="stats-icon pink mb-2">
-                                                <i class="bi bi-file-earmark-text-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                            <h6 class="text-muted font-semibold">Total Raport</h6>
-                                            <h6 class="font-extrabold mb-0">{{ number_format($stats['total_raport']) }}</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Academic Structure Statistics -->
-                    <div class="row mt-3">
-                        <div class="col-6 col-lg-3 col-md-6">
-                            <div class="card">
-                                <div class="card-body px-4 py-4-5">
-                                    <div class="row">
-                                        <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
-                                            <div class="stats-icon cyan mb-2">
-                                                <i class="bi bi-layers-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                            <h6 class="text-muted font-semibold">Jenjang</h6>
-                                            <h6 class="font-extrabold mb-0">{{ number_format($stats['total_jenjang']) }}</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-lg-3 col-md-6">
-                            <div class="card">
-                                <div class="card-body px-4 py-4-5">
-                                    <div class="row">
-                                        <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
-                                            <div class="stats-icon brown mb-2">
                                                 <i class="bi bi-diagram-3-fill"></i>
                                             </div>
                                         </div>
                                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                            <h6 class="text-muted font-semibold">Jurusan</h6>
+                                            <h6 class="text-muted font-semibold">Total Jurusan</h6>
                                             <h6 class="font-extrabold mb-0">{{ number_format($stats['total_jurusan']) }}</h6>
                                         </div>
                                     </div>
@@ -200,12 +112,12 @@
                                 <div class="card-body px-4 py-4-5">
                                     <div class="row">
                                         <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
-                                            <div class="stats-icon lime mb-2">
+                                            <div class="stats-icon indigo mb-2">
                                                 <i class="bi bi-building-fill"></i>
                                             </div>
                                         </div>
                                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                            <h6 class="text-muted font-semibold">Kelas</h6>
+                                            <h6 class="text-muted font-semibold">Total Kelas</h6>
                                             <h6 class="font-extrabold mb-0">{{ number_format($stats['total_kelas']) }}</h6>
                                         </div>
                                     </div>
@@ -217,13 +129,30 @@
                                 <div class="card-body px-4 py-4-5">
                                     <div class="row">
                                         <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
-                                            <div class="stats-icon amber mb-2">
+                                            <div class="stats-icon teal mb-2">
                                                 <i class="bi bi-journal-text"></i>
                                             </div>
                                         </div>
                                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                            <h6 class="text-muted font-semibold">Mata Pelajaran</h6>
+                                            <h6 class="text-muted font-semibold">Total Mapel</h6>
                                             <h6 class="font-extrabold mb-0">{{ number_format($stats['total_mapel']) }}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-4 py-4-5">
+                                    <div class="row">
+                                        <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                            <div class="stats-icon pink mb-2">
+                                                <i class="bi bi-shield-check"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                            <h6 class="text-muted font-semibold">System Status</h6>
+                                            <h6 class="font-extrabold mb-0 text-success">Active</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -270,18 +199,6 @@
                                 <span class="badge bg-dark">{{ $role_stats['kepala_sekolah_count'] }}</span>
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <div class="d-flex justify-content-between">
-                                    <span>Orang Tua</span>
-                                    <span class="badge bg-light text-dark">{{ $role_stats['ortu_count'] }}</span>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="d-flex justify-content-between">
-                                    <span>Guest</span>
-                                    <span class="badge bg-muted">{{ $role_stats['guest_count'] }}</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -308,6 +225,29 @@
                                     </div>
                                 </div>
                                 <small class="text-muted">{{ $attendance_stats['siswa_attendance'] }} / {{ $attendance_stats['total_siswa_attendance'] }} present</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="card mt-3">
+                        <div class="card-header">
+                            <h4>Quick Actions</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-grid gap-2">
+                                <a href="{{ route('guru.index') }}" class="btn btn-outline-primary btn-sm">
+                                    <i class="bi bi-person-plus"></i> Manage Guru
+                                </a>
+                                <a href="{{ route('siswa.index') }}" class="btn btn-outline-success btn-sm">
+                                    <i class="bi bi-mortarboard"></i> Manage Siswa
+                                </a>
+                                <a href="{{ route('kelas_admin.index') }}" class="btn btn-outline-info btn-sm">
+                                    <i class="bi bi-building"></i> Manage Kelas
+                                </a>
+                                <a href="{{ route('mapel.index') }}" class="btn btn-outline-warning btn-sm">
+                                    <i class="bi bi-journal-text"></i> Manage Mapel
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -351,24 +291,24 @@
                 <div class="col-12 col-xl-6">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Recent E-Learning</h4>
+                            <h4>Recent Guru</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Title</th>
-                                            <th>Subject</th>
-                                            <th>Created</th>
+                                            <th>Name</th>
+                                            <th>Mata Pelajaran</th>
+                                            <th>Jenjang</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($recent_data['e_learning'] as $e_learning)
+                                        @foreach($recent_data['guru'] as $guru_item)
                                         <tr>
-                                            <td>{{ $e_learning->judul ?? 'N/A' }}</td>
-                                            <td>{{ $e_learning->mata_pelajaran ?? 'N/A' }}</td>
-                                            <td>{{ $e_learning->created_at ? $e_learning->created_at->format('d/m/Y') : 'N/A' }}</td>
+                                            <td>{{ $guru_item->nama }}</td>
+                                            <td>{{ $guru_item->mata_pelajaran }}</td>
+                                            <td><span class="badge bg-info">{{ $guru_item->jenjang }}</span></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -379,54 +319,30 @@
                 </div>
             </section>
 
-            <!-- Additional Recent Data -->
+            <!-- System Information -->
             <section class="row mt-4">
-                <div class="col-12 col-xl-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Recent Soal</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Question</th>
-                                            <th>Subject</th>
-                                            <th>Type</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($recent_data['soal'] as $soal)
-                                        <tr>
-                                            <td>{{ Str::limit($soal->pertanyaan ?? 'N/A', 50) }}</td>
-                                            <td>{{ $soal->mata_pelajaran ?? 'N/A' }}</td>
-                                            <td><span class="badge bg-info">{{ $soal->jenis ?? 'N/A' }}</span></td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-xl-6">
+                <div class="col-12">
                     <div class="card">
                         <div class="card-header">
                             <h4>System Information</h4>
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-md-3">
                                     <p><strong>Laravel Version:</strong> {{ app()->version() }}</p>
                                     <p><strong>PHP Version:</strong> {{ phpversion() }}</p>
-                                    <p><strong>Database:</strong> {{ config('database.default') }}</p>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-md-3">
+                                    <p><strong>Database:</strong> {{ config('database.default') }}</p>
                                     <p><strong>Environment:</strong> {{ config('app.env') }}</p>
+                                </div>
+                                <div class="col-md-3">
                                     <p><strong>Debug Mode:</strong> {{ config('app.debug') ? 'ON' : 'OFF' }}</p>
                                     <p><strong>Timezone:</strong> {{ config('app.timezone') }}</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <p><strong>Last Updated:</strong> {{ now()->format('d/m/Y H:i') }}</p>
+                                    <p><strong>System Status:</strong> <span class="badge bg-success">Operational</span></p>
                                 </div>
                             </div>
                         </div>
@@ -436,4 +352,3 @@
         </div>
     </div>
 @endsection
-

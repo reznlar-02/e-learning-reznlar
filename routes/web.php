@@ -34,11 +34,14 @@ Route::get('event', [EventController::class, 'index'])->name('event.frontend');
 Route::get('blog', [BlogController::class, 'index'])->name('blog.frontend');
 Route::get('get-contact', [ContactController::class, 'index'])->name('contact.frontend');
 
-Route::middleware(['auth', 'verified', 'admin'])->group(function () {
-
+// Dashboard route for all authenticated users
+Route::middleware(['auth'])->group(function () {
     Route::get('/home', [DashboardController::class, 'index'])->name('home');
     Route::get('/logouts', [LoginController::class, 'logout'])->name('logouts');
+});
 
+// Admin-only routes (require admin role)
+Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('jenjang', JenjangController::class);
     Route::resource('jurusan', JurusanController::class);
     Route::resource('mapel', MataPelajaranController::class);
@@ -54,4 +57,5 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::resource('absensi_siswa', AbsensiSiswaController::class);
 });
 
-Auth::routes();
+// Include authentication routes
+require __DIR__.'/auth.php';
