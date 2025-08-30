@@ -649,7 +649,7 @@
                         <li class="sidebar-title">Raise Support</li>
 
                         <li class="sidebar-item  ">
-                            <a href="https://zuramai.github.io/mazer/docs" class='sidebar-link'>
+                            <a href="#" class='sidebar-link'>
                                 <i class="bi bi-life-preserver"></i>
                                 <span>Documentation</span>
                             </a>
@@ -658,7 +658,7 @@
                         </li>
 
                         <li class="sidebar-item  ">
-                            <a href="https://github.com/zuramai/mazer/blob/main/CONTRIBUTING.md" class='sidebar-link'>
+                            <a href="#" class='sidebar-link'>
                                 <i class="bi bi-puzzle"></i>
                                 <span>Contribute</span>
                             </a>
@@ -667,7 +667,7 @@
                         </li>
 
                         <li class="sidebar-item  ">
-                            <a href="https://github.com/zuramai/mazer#donation" class='sidebar-link'>
+                            <a href="#" class='sidebar-link'>
                                 <i class="bi bi-cash"></i>
                                 <span>Donate</span>
                             </a>
@@ -960,7 +960,7 @@
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-start">
-                        <p>2023 &copy; Mazer</p>
+                        <p>2023 &copy; Reznlar Education</p>
                     </div>
                     <div class="float-end">
                         <p>Crafted with <span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span>
